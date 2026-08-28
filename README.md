@@ -11,10 +11,16 @@ The pipeline transforms and converts the financial data into GBP, EUR, and INR b
 
 ---
 
+## ?? Data Sources & URLs
+* **Web Data Source:** [Wikipedia - List of largest banks (Web Archive)](https://web.archive.org/web/20230908091635/https://en.wikipedia.org/wiki/List_of_largest_banks)
+* **Exchange Rates CSV:** [Exchange Rate Data (IBM Cloud Storage)](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMSkillsNetwork-PY0221EN-Coursera/labs/v2/exchange_rate.csv)
+
+---
+
 ## ?? ETL Architecture & Tasks
 
 1. **Extract:** Scrapes bank names and market capitalization from Wikipedia using BeautifulSoup and requests.
-2. **Transform:** Reads exchange_rate.csv, converts USD valuations to GBP, EUR, and INR, and rounds all numerical metrics to 2 decimal places.
+2. **Transform:** Reads exchange rate data, converts USD valuations to GBP, EUR, and INR, and rounds all numerical metrics to 2 decimal places.
 3. **Load:** 
    - Exports the processed dataset to Largest_banks_data.csv.
    - Ingests records into the Largest_banks table within the Banks.db SQLite database.
